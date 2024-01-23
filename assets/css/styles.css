@@ -131,7 +131,7 @@ h2 {
   object-fit: cover;
   height: 300px;
   float: left;
-  margin: 0  12px 12px;
+  margin: 0 12px 12px;
   margin-top: 15px;
 }
 
@@ -252,7 +252,7 @@ h2.modal-title {
   width: 100% !important;
   display: flex !important;
   justify-content: space-between !important;
-  margin-bottom: 8px; */
+  margin-bottom: 8px;
 }
 
 .input-group-modal input {
@@ -270,7 +270,7 @@ h2.modal-title {
 }
 
 .input-group-append {
-  width: 50%; */
+  width: 50%;
   /* padding-bottom: 25px !important; */
   /* margin-bottom: 25px !important; */
 }
