@@ -23,7 +23,7 @@ h2 {
 }
 .modal {
   background-position: 50% 50%;
-  background-image: url(../images/apod.jpg);
+  /* background-image: url(../images/apod.jpg); */
   /* background-image: url(API Call for Random APOD image?); */
   background-size: cover;
   border-top: 0 !important;
