@@ -23,8 +23,6 @@ h2 {
 }
 .modal {
   background-position: 50% 50%;
-  background-image: url(../images/apod.jpg);
-  /* background-image: url(API Call for Random APOD image?); */
   background-size: cover;
   border-top: 0 !important;
 }
@@ -130,9 +128,9 @@ h2 {
   width: 300px;
   object-fit: cover;
   height: 300px;
-  /* border-radius: 400px; */
-  float: right;
-  margin: 0 0 12px 12px;
+  float: left;
+  margin: 0  12px 12px;
+  margin-top: 15px;
 }
 
 #wikipedia-section p {
@@ -146,9 +144,6 @@ h2 {
   display: grid;
   grid-template-columns: 25%;
   grid-template-rows: auto;
-  /* grid-template-areas: */
-  /* "top top top top" */
-  /* "left middle right bottom"; */
 
   grid-template-areas:
     "left middle right bottom"
@@ -159,7 +154,7 @@ h2 {
 
 .video {
   position: relative;
-  padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
@@ -242,7 +237,6 @@ h2.modal-title {
 
 .modal-header {
   border-bottom: 0 !important;
-  /* text-align: center; */
 }
 
 .modal-body {
@@ -256,11 +250,13 @@ h2.modal-title {
   width: 100% !important;
   display: flex !important;
   justify-content: space-between !important;
+  margin-bottom: 8px; */
 }
 
 .input-group-modal input {
   width: 70%;
   border: 1px solid black;
+  margin-right: 8px;
 }
 
 .input-group-append-modal {
@@ -269,6 +265,12 @@ h2.modal-title {
 
 .input-group-append-modal button {
   width: 100%;
+}
+
+.input-group-append {
+  width: 50%; */
+  /* padding-bottom: 25px !important; */
+  /* margin-bottom: 25px !important; */
 }
 
 .history-modal {
