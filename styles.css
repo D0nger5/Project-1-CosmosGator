@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+}
+
+button {
+  border-radius: 4px !important;
+}
+
+h2 {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.container,
+.modal {
+  font-family: "Inter";
+}
+.modal {
+  background-position: 50% 50%;
+  background-image: url(../images/apod.jpg);
+  /* background-image: url(API Call for Random APOD image?); */
+  background-size: cover;
+  border-top: 0 !important;
+}
+
+.container h1 {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin: 1em 0;
+  padding: 0 0 8px;
+  text-align: center;
+}
+
+#search-input {
+  width: calc(100% - 88px);
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 25px;
+}
+
+.btn.search-button-class {
+  border-radius: 0;
+  width: 88px;
+  margin: 0;
+  border-radius: 25px;
+}
+
+.form-input {
+  font-style: italic;
+}
+
+.recentSearches {
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  margin: 16px 0;
+  column-gap: 12px;
+  justify-content: center;
+}
+
+.history {
+  font-size: 12px;
+  border-radius: 25px;
+}
+
+.history button {
+  border: 1px solid #28a745;
+  color: #28a745;
+  padding: 4px 12px;
+  border-radius: 25px;
+}
+
+.history button:focus,
+.history button:hover {
+  background: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-color: transparent;
+  border-radius: 25px;
+}
+
+.btn.clear-search {
+  padding: 4px 12px;
+  height: fit-content;
+}
+
+.btn-outline-dark,
+.btn-outline-success {
+  color: green !important;
+  border-color: green !important;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-success:hover,
+.btn-outline-dark:active,
+.btn-outline-success:active,
+.btn-outline-dark:focus,
+.btn-outline-success:focus {
+  color: rgb(255, 255, 255) !important;
+  border-color: rgb(40, 167, 68) !important;
+}
+
+.history-page button {
+  margin-right: 0.5rem;
+}
+
+.clear-search-page {
+  margin-bottom: 1rem;
+}
+
+#wikipedia-section {
+  margin: 4em 0;
+}
+
+#wikipedia-section h2 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#wikipedia-section img {
+  width: 300px;
+  object-fit: cover;
+  height: 300px;
+  /* border-radius: 400px; */
+  float: right;
+  margin: 0 0 12px 12px;
+}
+
+#wikipedia-section p {
+  color: #121212;
+}
+
+/* #ai-section { */
+/* } */
+
+#youtube-section {
+  display: grid;
+  grid-template-columns: 25%;
+  grid-template-rows: auto;
+  /* grid-template-areas: */
+  /* "top top top top" */
+  /* "left middle right bottom"; */
+
+  grid-template-areas:
+    "left middle right bottom"
+    "top top top top";
+  margin: 0 0 8rem;
+  gap: 1rem;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%; /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+  height: 0;
+  overflow: hidden;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#video1 {
+  grid-area: top;
+}
+
+#video2 {
+  grid-area: left;
+  height: 100%;
+}
+
+#video3 {
+  grid-area: middle;
+  height: 100%;
+}
+
+#video4 {
+  grid-area: right;
+  height: 100%;
+}
+
+#video5 {
+  grid-area: bottom;
+  height: 100%;
+}
+
+.large-video {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.video-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.video-row-1,
+.video-row-2 {
+  width: 23%;
+  float: left;
+  overflow: hidden;
+  margin-right: 2%;
+  justify-content: space-around;
+}
+
+.video-row-2 {
+  margin-right: 0;
+  clear: right;
+}
+
+iframe {
+  border: none;
+}
+
+h2.modal-title {
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  padding: 0 0 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: 0 !important;
+  /* text-align: center; */
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  text-align: center;
+}
+
+.input-group-modal {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.input-group-modal input {
+  width: 70%;
+  border: 1px solid black;
+}
+
+.input-group-append-modal {
+  width: 30%;
+}
+
+.input-group-append-modal button {
+  width: 100%;
+}
+
+.history-modal {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+}
+
+.footer {
+  padding: 1rem 0;
+}
+
+.footer .container {
+  padding-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  #youtube-section {
+    grid-template-columns: 50%;
+    grid-template-areas:
+      "top top"
+      "left middle"
+      "right bottom";
+  }
+
+  .recentSearches {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  #wikipedia-section h2 {
+    font-size: 40px;
+  }
+
+  #wikipedia-section img {
+    display: block;
+    margin: 0 auto 24px;
+    float: none;
+  }
+
+  #wikipedia-section p {
+    display: block;
+  }
+
+  #youtube-section {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "top "
+      "left"
+      "middle"
+      "right"
+      "bottom";
+  }
+}
+
+@media (max-width: 512px) {
+  #wikipedia-section h2 {
+    font-size: 32px;
+  }
+
+  #wikipedia-section img {
+    height: 200px;
+    width: 200px;
+  }
+}
