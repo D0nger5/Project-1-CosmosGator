@@ -36,7 +36,7 @@ $(".search-button-class").on("click", function (e) {
 });
 ``;
 // Event listener to get the search value from the modal
-$(".search-button-modal").on("click", function (e) {
+$(".modal-body").on("click", "#search-button", function (e) {
   e.preventDefault();
   currentSearch = $("#search-input-modal").val();
   if (searchHistory.includes(currentSearch) || currentSearch === "") {
@@ -52,6 +52,7 @@ $(".search-button-modal").on("click", function (e) {
     fetchYouTubeVideo();
     youtubeSection.empty();
     localSearchHistory();
+    modal.hide();
   }
 });
 
