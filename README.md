@@ -1,12 +1,20 @@
 # Elevator Pitch
 
+What if you woke up one day and decided you want to impress everyone at the office water cooler?
+
+How would you go about this? You could use Wikipedia! Or maybe YouTube videos suit you better? How about both!?
+
+Introducing CosmosGator, the everything aggregator. 
+
 # Concept
 
-## User Story
+CosmosGator is an everything aggregator. The app allows you to search for a term and displays Wikipedia and YouTube results all in one place! 
+
+# User Story
 
 As a curious human being, I want to learn interesting information about anything and everything in the cosmos, so that I can be the coolest person at the office water cooler! 
 
-## Acceptance Criteria
+# Acceptance Criteria
 
 It is done when:
 
@@ -50,6 +58,7 @@ It is done when:
     - Demo: Show your stuff!
     - Directions for Future Development
     - Links to the deployed application and the GitHub repository
+    - Link to Presentation: https://docs.google.com/presentation/d/1HCST9asCAQs-eDbZeIkchlm5Pe5GXJATGFCKbmWYk98/edit?usp=sharing
 
 - The deployed application URL has been submitted on Bootcamp Spot 
 
