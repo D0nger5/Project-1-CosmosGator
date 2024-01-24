@@ -1,6 +1,7 @@
 /** @format */
 
-const apiKey = "AIzaSyDGCWZu84Wo1O7MmVU6sHP67CzIOQyaz_E";
+const youtubeKey = "AIzaSyDTQGMx0OQhNU8PFnmS-79kjXN2X97-VJc";
+var unsplashKey = "9SiwBK49gHKBOh9WjiCcFSLaCDV4ymmUWoQdpVrIkwI";
 const historyButtons = $(".history");
 var youtubeSection = $("#youtube-section");
 var wikipediaSection = $("#wikipedia-section");
@@ -10,6 +11,22 @@ var searchHistory = [];
 // Display Modal
 var modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 modal.show();
+
+function fetchUnsplashImages() {
+  var queryURL =
+    "https://api.unsplash.com/photos/random?client_id=" +
+    unsplashKey +
+    "&query=outer+space&orientation=landscape";
+  fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      $(".modal").css({ backgroundImage: `url(${data.urls.regular})` });
+    });
+}
+fetchUnsplashImages();
 
 // Event listener to get the search value from the page
 $(".search-button-class").on("click", function (e) {
@@ -60,7 +77,7 @@ $(".modal-body").on("click", "#search-button", function (e) {
 function fetchYouTubeVideo() {
   var queryURL =
     "https://www.googleapis.com/youtube/v3/search?key=" +
-    apiKey +
+    youtubeKey +
     "&q=" +
     currentSearch +
     "&part=snippet&type=video&regionCode=uk";
@@ -68,6 +85,7 @@ function fetchYouTubeVideo() {
     url: queryURL,
     method: "GET",
   }).then(function (youtubeData) {
+    console.log(youtubeData);
     for (let i = 0; i < youtubeData.items.length; i++) {
       var videoId = youtubeData.items[i].id.videoId;
       youtubeSection
@@ -119,7 +137,7 @@ function fetchWikiArticles() {
 // Adds a click event to all the buttons with a class of past-search
 $(document).on("click", ".past-search", historyOfSearches);
 
-// Function to re-display the current weather based on the click of past-searches buttons
+// Function to re-display the information based on the past-searches buttons
 function historyOfSearches() {
   currentSearch = $(this).attr("data-search");
   $("header#container").removeClass("hide");
