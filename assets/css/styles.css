@@ -269,11 +269,11 @@ h2.modal-title {
   width: 100%;
 }
 
-.input-group-append {
-  width: 50%;
+/* .input-group-append { */
+/*   width: 50%; */
   /* padding-bottom: 25px !important; */
   /* margin-bottom: 25px !important; */
-}
+/* } */
 
 .history-modal {
   display: flex;
