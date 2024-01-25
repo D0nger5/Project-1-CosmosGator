@@ -1,6 +1,6 @@
 /** @format */
 
-const youtubeKey = "AIzaSyDTQGMx0OQhNU8PFnmS-79kjXN2X97-VJc";
+const youtubeKey = "AIzaSyAW8bra2KSM3jLNLTbuQ9Fv41rZv_H7aEQ";
 var unsplashKey = "Dgn0FqGJ_j60hIKKUIpXXYynWjdooCKTetpXroOF2Wc";
 const historyButtons = $(".history");
 var youtubeSection = $("#youtube-section");
