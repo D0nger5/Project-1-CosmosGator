@@ -1,5 +1,3 @@
-/** @format */
-
 const youtubeKey = "AIzaSyDTQGMx0OQhNU8PFnmS-79kjXN2X97-VJc";
 var unsplashKey = "9SiwBK49gHKBOh9WjiCcFSLaCDV4ymmUWoQdpVrIkwI";
 const historyButtons = $(".history");
@@ -31,7 +29,7 @@ fetchUnsplashImages();
 // Event listener to get the search value from the page
 $(".search-button-class").on("click", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input").val();
+  currentSearch = $("#search-input").val().trim();
   if (searchHistory.includes(currentSearch) || currentSearch === "") {
     $("header#container").addClass("hide");
     wikipediaSection.empty();
@@ -55,7 +53,7 @@ $(".search-button-class").on("click", function (e) {
 // Event listener to get the search value from the modal
 $(".modal-body").on("click", "#search-button", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input-modal").val();
+  currentSearch = $("#search-input-modal").val().trim();
   if (searchHistory.includes(currentSearch) || currentSearch === "") {
     location.reload();
     return;
