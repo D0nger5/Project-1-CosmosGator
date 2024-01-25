@@ -1,5 +1,3 @@
-/** @format */
-
 const youtubeKey = "AIzaSyDTQGMx0OQhNU8PFnmS-79kjXN2X97-VJc";
 var unsplashKey = "9SiwBK49gHKBOh9WjiCcFSLaCDV4ymmUWoQdpVrIkwI";
 const historyButtons = $(".history");
@@ -12,6 +10,7 @@ var searchHistory = [];
 var modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 modal.show();
 
+// Function to get Unsplash API images
 function fetchUnsplashImages() {
   var queryURL =
     "https://api.unsplash.com/photos/random?client_id=" +
@@ -31,14 +30,23 @@ fetchUnsplashImages();
 // Event listener to get the search value from the page
 $(".search-button-class").on("click", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input").val();
-  if (searchHistory.includes(currentSearch) || currentSearch === "") {
-    $("header#container").addClass("hide");
-    wikipediaSection.empty();
-    youtubeSection.empty();
-    $(".footer").hide();
-    location.reload();
+  currentSearch = $("#search-input").val().trim().toUpperCase();
+  if (searchHistory.includes(currentSearch)) {
+    $("#search-form").prepend(
+      $("<h4>")
+        .text(currentSearch + " has already been searched...")
+        .css({ color: "red", textAlign: "center" })
+        .fadeOut(2500)
+    );
+    $("#search-input").val("");
     return;
+  } else if (currentSearch === "") {
+    $("#search-form").prepend(
+      $("<h4>")
+        .text(currentSearch + " Please enter a query to search...")
+        .css({ color: "red", textAlign: "center" })
+        .fadeOut(2500)
+    );
   } else {
     searchHistory.push(currentSearch);
     localStorage.setItem("search-history", JSON.stringify(searchHistory));
@@ -53,12 +61,21 @@ $(".search-button-class").on("click", function (e) {
 });
 ``;
 // Event listener to get the search value from the modal
-$(".modal-body").on("click", "#search-button", function (e) {
+$(".modal-body").on("click", "#search-button-modal", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input-modal").val();
-  if (searchHistory.includes(currentSearch) || currentSearch === "") {
-    location.reload();
+  currentSearch = $("#search-input-modal").val().trim().toUpperCase();
+  if (searchHistory.includes(currentSearch)) {
+    $(".modal-body")
+      .children("p")
+      .text(currentSearch + " has already been searched...")
+      .css({ color: "red", border: "3px dotted aqua" });
+    $("#search-input-modal").val("");
     return;
+  } else if (currentSearch === "") {
+    $(".modal-body")
+      .children("p")
+      .text("Please enter a query to search...")
+      .css({ color: "red", border: "3px dotted aqua" });
   } else {
     searchHistory.push(currentSearch);
     localStorage.setItem("search-history", JSON.stringify(searchHistory));
