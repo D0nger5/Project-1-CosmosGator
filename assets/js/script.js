@@ -132,10 +132,6 @@ function fetchWikiArticles() {
 		.then(function (data) {
 			console.log(data);
 			var pageID = Object.keys(data.query.pages)[0];
-			console.log(pageID);
-			Object.keys(data.query.pages[pageID]).forEach(key => {
-				console.log(key);
-			});
 			var title = $("<h2></h2>").text(data.query.pages[pageID].title);
 			var img = $("<img>").attr(
 				"src",
