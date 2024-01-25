@@ -42,6 +42,7 @@ It is done when:
 
 - The application is deployed to Github pages ✅
     - The application loads with no errors
+    - Link to the deployed project: https://d0nger5.github.io/Project-1-CosmosGator/ 
 
 - The repository meets quality coding standards: ✅
     - The Github contributions from Nadeem, John and Monrone are evenly balanced (note: Monrone has uploaded the JS code on behalf of Nadeem also)
