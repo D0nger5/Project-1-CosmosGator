@@ -57,9 +57,14 @@ $(".modal-body").on("click", "#search-button", function (e) {
   if (searchHistory.includes(currentSearch)) {
     $(".modal-body")
       .children("p")
-      .text("This query has already been searched...")
+      .text(currentSearch + " has already been searched...")
       .css({ color: "red", border: "3px dotted aqua" });
     return;
+  } else if (currentSearch === "") {
+    $(".modal-body")
+      .children("p")
+      .text("Please enter a query to search...")
+      .css({ color: "red", border: "3px dotted aqua" });
   } else {
     searchHistory.push(currentSearch);
     localStorage.setItem("search-history", JSON.stringify(searchHistory));
