@@ -33,7 +33,7 @@ It is done when:
 
 - The application implements three server-side APIs: ✅
     - Unsplash API
-    - Wikimedia API
+    - Wikipedia API
     - YouTube API
 
 - The application is interactive (accepts and responds to user input) ✅
