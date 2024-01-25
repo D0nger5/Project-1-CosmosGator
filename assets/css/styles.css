@@ -23,8 +23,6 @@ h2 {
 }
 .modal {
   background-position: 50% 50%;
-  /* background-image: url(../images/apod.jpg); */
-  /* background-image: url(API Call for Random APOD image?); */
   background-size: cover;
   border-top: 0 !important;
 }
@@ -48,6 +46,7 @@ h2 {
 .btn.search-button-class {
   border-radius: 0;
   width: 88px;
+  height:45px;
   margin: 0;
   border-radius: 25px;
 }
