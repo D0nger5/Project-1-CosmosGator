@@ -29,7 +29,7 @@ fetchUnsplashImages();
 // Event listener to get the search value from the page
 $(".search-button-class").on("click", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input").val().trim();
+  currentSearch = $("#search-input").val().trim().toUpperCase();
   if (searchHistory.includes(currentSearch)) {
     $("#search-form").prepend(
       $("<h4>")
@@ -62,7 +62,7 @@ $(".search-button-class").on("click", function (e) {
 // Event listener to get the search value from the modal
 $(".modal-body").on("click", "#search-button", function (e) {
   e.preventDefault();
-  currentSearch = $("#search-input-modal").val().trim();
+  currentSearch = $("#search-input-modal").val().trim().toUpperCase();
   if (searchHistory.includes(currentSearch)) {
     $(".modal-body")
       .children("p")
