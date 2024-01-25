@@ -1,4 +1,8 @@
-# Elevator Pitch
+# The CosmosGator App
+
+<img src="assets/images/cosmosgator.png" width="1000px">
+
+## Elevator Pitch
 
 What if you woke up one day and decided you want to impress everyone at the office water cooler?
 
@@ -6,15 +10,15 @@ How would you go about this? You could use Wikipedia! Or maybe YouTube videos su
 
 Introducing CosmosGator, the everything aggregator. 
 
-# Concept
+## Concept
 
 CosmosGator is an everything aggregator. The app allows you to search for a term and displays Wikipedia and YouTube results all in one place! 
 
-# User Story
+## User Story
 
 As a curious human being, I want to learn interesting information about anything and everything in the cosmos, so that I can be the coolest person at the office water cooler! 
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 It is done when:
 
