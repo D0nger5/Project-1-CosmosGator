@@ -102,7 +102,7 @@ h2 {
 .btn-outline-success:active,
 .btn-outline-dark:focus,
 .btn-outline-success:focus {
-  color: rgb(255, 255, 255) !important;
+  color: rgb(40, 167, 68) !important;
   border-color: rgb(40, 167, 68) !important;
 }
 
