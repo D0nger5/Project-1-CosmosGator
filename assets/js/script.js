@@ -10,6 +10,7 @@ var searchHistory = [];
 var modal = new bootstrap.Modal(document.getElementById("exampleModal"));
 modal.show();
 
+// Function to get Unsplash API images
 function fetchUnsplashImages() {
   var queryURL =
     "https://api.unsplash.com/photos/random?client_id=" +
@@ -60,7 +61,7 @@ $(".search-button-class").on("click", function (e) {
 });
 ``;
 // Event listener to get the search value from the modal
-$(".modal-body").on("click", "#search-button", function (e) {
+$(".modal-body").on("click", "#search-button-modal", function (e) {
   e.preventDefault();
   currentSearch = $("#search-input-modal").val().trim().toUpperCase();
   if (searchHistory.includes(currentSearch)) {

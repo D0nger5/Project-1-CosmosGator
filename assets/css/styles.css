@@ -46,7 +46,7 @@ h2 {
 .btn.search-button-class {
   border-radius: 0;
   width: 88px;
-  height:45px;
+  height: 45px;
   margin: 0;
   border-radius: 25px;
 }
@@ -270,8 +270,8 @@ h2.modal-title {
 
 /* .input-group-append { */
 /*   width: 50%; */
-  /* padding-bottom: 25px !important; */
-  /* margin-bottom: 25px !important; */
+/* padding-bottom: 25px !important; */
+/* margin-bottom: 25px !important; */
 /* } */
 
 .history-modal {
