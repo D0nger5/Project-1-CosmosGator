@@ -21,7 +21,6 @@ function fetchUnsplashImages() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       $(".modal").css({ backgroundImage: `url(${data.urls.regular})` });
     });
 }
@@ -101,10 +100,10 @@ function fetchYouTubeVideo() {
   $.ajax({
     url: queryURL,
     method: "GET",
-  }).then(function (youtubeData) {
-    console.log(youtubeData);
-    for (let i = 0; i < youtubeData.items.length; i++) {
-      var videoId = youtubeData.items[i].id.videoId;
+  }).then(function (data) {
+    console.log(data);
+    for (let i = 0; i < data.items.length; i++) {
+      var videoId = data.items[i].id.videoId;
       youtubeSection
         .append(
           `
@@ -122,33 +121,31 @@ function fetchYouTubeVideo() {
 // Function to get Wikipedia articles using the Wikipedia API
 function fetchWikiArticles() {
   var queryURL =
-    "https://en.wikipedia.org/w/api.php?action=query&list=allimages&aifrom=B&generator=search&links&gsrsearch=" +
-    currentSearch +
-    "&gsrlimit=1&prop=info|pageimages|extracts&exintro&exlimit=max&inprop=url&format=json&origin=*&pithumbsize=1000";
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (wikiData) {
-    var results = wikiData.query.pages;
-    Object.keys(results).forEach((key) => {
-      const id = key;
-      const title = results[key].title;
-      const text = results[key].extract;
-      const image = results[key].thumbnail.source;
-      const wikiLink = results[key].fullurl;
-      wikipediaSection
-        .append(
-          `
-                <h2>${title}</h2>
-                <img src="${image}" alt="${title}">
-                <p>${text}</p>
-                <p>For more information, visit <a href="${wikiLink}" target="_blank">Wikipedia</a>.</p>
-            `
-        )
-        .hide()
-        .fadeIn(500);
+    "https://en.wikipedia.org/w/api.php?action=query&origin=*&prop=info|pageimages|extracts&exintro&exlimit=max&inprop=url&pithumbsize=1000&gsrlimit=1&generator=search&format=json&gsrsearch=" +
+    currentSearch;
+  fetch(queryURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var pageID = Object.keys(data.query.pages)[0];
+      console.log(pageID);
+      Object.keys(data.query.pages[pageID]).forEach((key) => {
+        console.log(key);
+      });
+      var title = $("<h2></h2>").text(data.query.pages[pageID].title);
+      var img = $("<img>").attr(
+        "src",
+        data.query.pages[pageID].thumbnail.source
+      );
+      var para = $("<p></p>").html(data.query.pages[pageID].extract);
+      var link = data.query.pages[pageID].fullurl;
+      var linkText = $(
+        `<p>For a full breakdown on this search, please refer to <a href="${link}" target="_blank">Wikipedia</a>.</p>`
+      );
+      wikipediaSection.append(title, img, para, linkText).hide().fadeIn(500);
     });
-  });
 }
 
 // Adds a click event to all the buttons with a class of past-search
