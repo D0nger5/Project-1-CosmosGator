@@ -54,8 +54,11 @@ $(".search-button-class").on("click", function (e) {
 $(".modal-body").on("click", "#search-button", function (e) {
   e.preventDefault();
   currentSearch = $("#search-input-modal").val().trim();
-  if (searchHistory.includes(currentSearch) || currentSearch === "") {
-    location.reload();
+  if (searchHistory.includes(currentSearch)) {
+    $(".modal-body")
+      .children("p")
+      .text("This query has already been searched...")
+      .css({ color: "red", border: "3px dotted aqua" });
     return;
   } else {
     searchHistory.push(currentSearch);
