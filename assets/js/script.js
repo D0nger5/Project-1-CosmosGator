@@ -1,7 +1,7 @@
 /** @format */
 
 const youtubeKey = "AIzaSyAW8bra2KSM3jLNLTbuQ9Fv41rZv_H7aEQ";
-var unsplashKey = "Dgn0FqGJ_j60hIKKUIpXXYynWjdooCKTetpXroOF2Wc";
+// var unsplashKey = "Dgn0FqGJ_j60hIKKUIpXXYynWjdooCKTetpXroOF2Wc"; 
 const historyButtons = $(".history");
 var youtubeSection = $("#youtube-section");
 var wikipediaSection = $("#wikipedia-section");
