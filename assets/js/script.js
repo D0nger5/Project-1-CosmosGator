@@ -30,13 +30,22 @@ fetchUnsplashImages();
 $(".search-button-class").on("click", function (e) {
   e.preventDefault();
   currentSearch = $("#search-input").val().trim();
-  if (searchHistory.includes(currentSearch) || currentSearch === "") {
-    $("header#container").addClass("hide");
-    wikipediaSection.empty();
-    youtubeSection.empty();
-    $(".footer").hide();
-    location.reload();
+  if (searchHistory.includes(currentSearch)) {
+    $("#search-form").prepend(
+      $("<h4>")
+        .text(currentSearch + " has already been searched...")
+        .css({ color: "red", textAlign: "center" })
+        .fadeOut(2500)
+    );
+    $("#search-input").val("");
     return;
+  } else if (currentSearch === "") {
+    $("#search-form").prepend(
+      $("<h4>")
+        .text(currentSearch + " Please enter a query to search...")
+        .css({ color: "red", textAlign: "center" })
+        .fadeOut(2500)
+    );
   } else {
     searchHistory.push(currentSearch);
     localStorage.setItem("search-history", JSON.stringify(searchHistory));
@@ -59,6 +68,7 @@ $(".modal-body").on("click", "#search-button", function (e) {
       .children("p")
       .text(currentSearch + " has already been searched...")
       .css({ color: "red", border: "3px dotted aqua" });
+    $("#search-input-modal").val("");
     return;
   } else if (currentSearch === "") {
     $(".modal-body")
